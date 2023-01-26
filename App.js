@@ -7,6 +7,7 @@ export default function App() {
     <SafeAreaView style={styles.container}>
 
       <Image source={fit} style={styles.fit_image}/>
+      <Text style={styles.fit_image_text}> Believe In yourself</Text>
 
       <StatusBar style="auto" />
     </SafeAreaView>
@@ -20,4 +21,14 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  
+  fit_image: {
+    width: 375,
+    height: 250,
+  },
+
+  fit_image_text: {
+    position: 'absolute',
+    color: 'white'
+  }
 });
