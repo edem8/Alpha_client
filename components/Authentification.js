@@ -1,5 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
+import Checkbox from 'expo-checkbox';
 import { StyleSheet, Image, useWindowDimensions, View, Text, TextInput, Touchable, TouchableOpacity} from 'react-native';
 import believe_in_yourself from '../assets/images/believe_in_yourself.jpg'
 
@@ -9,6 +10,8 @@ export default function Authentification() {
 
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const [isChecked, setChecked] = useState(false);
   return (
     <View style={styles.container}>
     <Image
@@ -34,13 +37,21 @@ export default function Authentification() {
         <TextInput 
         placeholder='Password'
         onChangeText={(password) => setPassword(password)}
-        style={styles.input_text}/>
+        style={styles.input_text}
+        secureTextEntry/>
 
     </View>
     </View>
 
     <View style={styles.remember_reset_container}>
-      <TouchableOpacity>
+    <Checkbox
+          style={styles.checkbox}
+          value={isChecked}
+          onValueChange={setChecked}
+          color={isChecked ? '#3388FF' : undefined}
+        />
+      <Text style={styles.remember_me_text}>Remember me</Text>
+      <TouchableOpacity style={styles.reset_password_conatiner}>
       <Text style={styles.reset_password_text}>
         Reset Password
       </Text>
@@ -93,6 +104,27 @@ const styles = StyleSheet.create({
 
   remember_reset_container: {
     flexDirection: 'row',
+    width: '90%',
+    
+  },
+
+  checkbox: {
+    borderWidth: 1,
+    borderRadius: 6,
+    height: 21,
+    width: 20,
+  
+  },
+
+  remember_me_text: {
+    paddingHorizontal: 7,
+    paddingVertical: 5,
+  },
+
+  reset_password_conatiner: {
+    paddingHorizontal: 7,
+    paddingVertical: 5,
+    marginLeft: '30%'
   },
 
   reset_password_text: {
