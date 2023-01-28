@@ -5,7 +5,7 @@ import Authentification from './components/Authentification'
 export default function App() {
 
   return (
-    <SafeAreaView style={styles.container}>
+    <SafeAreaView style={styles.root}>
       <Authentification/>
 
     </SafeAreaView>
@@ -13,11 +13,9 @@ export default function App() {
 }
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center'
+    backgroundColor: "#F9FBFC",  
   },
   
 });
