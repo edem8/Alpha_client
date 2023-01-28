@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Image, useWindowDimensions, View, Text, TextInput} from 'react-native';
+import { StyleSheet, Image, useWindowDimensions, View, Text, TextInput, Touchable, TouchableOpacity} from 'react-native';
 import believe_in_yourself from '../assets/images/believe_in_yourself.jpg'
 
 export default function Authentification() {
@@ -13,7 +13,7 @@ export default function Authentification() {
     <View style={styles.container}>
     <Image
     source={believe_in_yourself}
-    style={[styles.believe_in_yourself, {height: height * 0.4}, {width: width * 1.1}]}
+    style={[styles.believe_in_yourself, {height: height * 4}, {width: width * 3}]}
     resizeMode="contain" />
     
     <View style={styles.input_label_text_container}>
@@ -40,6 +40,14 @@ export default function Authentification() {
     </View>
 
 
+    <View style={styles.input_label_text_container}>
+    <TouchableOpacity style={styles.submit_button_conatiner}>
+      <Text style={styles.submit_button_text}>
+        Submit
+      </Text>
+    </TouchableOpacity>
+    </View>
+
 
     
     </View>
@@ -52,6 +60,7 @@ const styles = StyleSheet.create({
     },
 
     believe_in_yourself: {
+    
         maxWidth: 600,
         maxHeight: 500,
    
@@ -73,5 +82,19 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 10,
     paddingVertical: 7
+  },
+
+  submit_button_text: {
+    color: "#fff",
+    fontWeight: 'bold',
+    fontSize: 20
+
+  },
+
+  submit_button_conatiner: {
+    backgroundColor: "#55AAFF",
+    padding: 20,
+    borderRadius: 9,
+    alignItems: 'center'
   },
 });
