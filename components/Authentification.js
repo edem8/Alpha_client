@@ -16,8 +16,8 @@ export default function Authentification() {
     <View style={styles.container}>
     <Image
     source={believe_in_yourself}
-    style={[styles.believe_in_yourself, {height: height * .4}, {width: width * 1.2}]}
-    resizeMode="contain" />
+    style={[styles.believe_in_yourself, {height: height * .3}, {width: width * 1}]}
+    resizeMode= 'cover' />
     
     <View style={styles.input_label_text_container}>
     <Text style={styles.input_label}>Username Or Email</Text>
@@ -66,7 +66,18 @@ export default function Authentification() {
     </TouchableOpacity>
     </View>
 
+    
 
+    <View style={{flexDirection: 'row', alignItems: 'center', width: '30%', marginVertical: 40}}>
+      <View style={{flex: 1, height: 1, backgroundColor: '#D4D4D4'}} />
+      <View>
+      <Text style={{width: 25, textAlign: 'center', color:'#BEBEBE' }}>or</Text>
+      </View>
+      <View style={{flex: 1, height: 1, backgroundColor: '#D4D4D4'}} />
+    </View>
+
+
+    
     
     </View>
   );
@@ -78,7 +89,7 @@ const styles = StyleSheet.create({
     },
 
     believe_in_yourself: {
-    
+        
         maxWidth: 600,
         maxHeight: 500,
    
@@ -140,7 +151,7 @@ const styles = StyleSheet.create({
 
   submit_button_conatiner: {
     backgroundColor: "#55AAFF",
-    padding: 20,
+    padding: 15,
     borderRadius: 9,
     alignItems: 'center'
   },
