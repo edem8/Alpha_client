@@ -13,7 +13,7 @@ export default function Authentification() {
     <View style={styles.container}>
     <Image
     source={believe_in_yourself}
-    style={[styles.believe_in_yourself, {height: height * 4}, {width: width * 3}]}
+    style={[styles.believe_in_yourself, {height: height * .4}, {width: width * 1.2}]}
     resizeMode="contain" />
     
     <View style={styles.input_label_text_container}>
@@ -39,6 +39,13 @@ export default function Authentification() {
     </View>
     </View>
 
+    <View style={styles.remember_reset_container}>
+      <TouchableOpacity>
+      <Text style={styles.reset_password_text}>
+        Reset Password
+      </Text>
+      </TouchableOpacity>
+    </View>
 
     <View style={styles.input_label_text_container}>
     <TouchableOpacity style={styles.submit_button_conatiner}>
@@ -82,6 +89,14 @@ const styles = StyleSheet.create({
     borderRadius: 10,
     paddingHorizontal: 10,
     paddingVertical: 7
+  },
+
+  remember_reset_container: {
+    flexDirection: 'row',
+  },
+
+  reset_password_text: {
+    color: '#3388FF'
   },
 
   submit_button_text: {
