@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import Checkbox from 'expo-checkbox';
-import { StyleSheet, Image, useWindowDimensions, View, Text, TextInput, Touchable, TouchableOpacity} from 'react-native';
+import { StyleSheet, Image, useWindowDimensions, View, Text, TextInput, ScrollView, TouchableOpacity} from 'react-native';
 import believe_in_yourself from '../assets/images/believe_in_yourself.jpg'
 
 export default function Authentification() {
@@ -13,6 +13,7 @@ export default function Authentification() {
 
     const [isChecked, setChecked] = useState(false);
   return (
+    <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.container}>
     <Image
     source={believe_in_yourself}
@@ -77,9 +78,19 @@ export default function Authentification() {
     </View>
 
 
-    
+    <View style={styles.go_to_signup}>
+      <Text>
+        Not a member?
+      </Text>
+      <TouchableOpacity>
+        <Text style={styles.signup_here_text}>
+          Sign Up here
+        </Text>
+      </TouchableOpacity>
+    </View>
     
     </View>
+    </ScrollView>
   );
 }
 
@@ -154,5 +165,15 @@ const styles = StyleSheet.create({
     padding: 15,
     borderRadius: 9,
     alignItems: 'center'
+  },
+
+  go_to_signup: {
+    flexDirection: 'row',
+    alignContent: 'space-between',
+  },
+
+  signup_here_text: {
+    color: '#3388FF',
+    paddingHorizontal: 5,
   },
 });
