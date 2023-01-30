@@ -7,7 +7,7 @@ import google from '../assets/images/google.png'
 import facebook from '../assets/images/facebook.png'
 import linkedin from '../assets/images/linkedin.png'
 
-export default function Authentification() {
+export default function SignInScreen() {
     const {height} = useWindowDimensions();
     const {width} = useWindowDimensions();
 
@@ -23,6 +23,7 @@ export default function Authentification() {
     style={[styles.believe_in_yourself, {height: height * .3}, {width: width * 1}]}
     resizeMode= 'cover' />
     
+        {/* Placeholder for Eamil Entry */}
     <View style={styles.input_label_text_container}>
     <Text style={styles.input_label}>Username Or Email</Text>
     <View style={styles.input_text_container}>
@@ -34,7 +35,7 @@ export default function Authentification() {
     </View>
     </View>
 
-     
+      {/* Placeholder for Password Entry */}
     <View style={styles.input_label_text_container}>
     <Text style={styles.input_label}>Password</Text>
     <View style={styles.input_text_container}>
@@ -47,6 +48,7 @@ export default function Authentification() {
     </View>
     </View>
 
+        {/* Remember me and reset password*/}
     <View style={styles.remember_reset_container}>
     <Checkbox
           style={styles.checkbox}
@@ -62,6 +64,7 @@ export default function Authentification() {
       </TouchableOpacity>
     </View>
 
+        {/* Submit Button*/}
     <View style={styles.input_label_text_container}>
     <TouchableOpacity style={styles.submit_button_conatiner}>
       <Text style={styles.submit_button_text}>
@@ -71,8 +74,8 @@ export default function Authentification() {
     </View>
 
     
-
-    <View style={{flexDirection: 'row', alignItems: 'center', width: '30%', marginVertical: 40}}>
+        {/* Horizontal "or" rule*/}
+    <View style={{flexDirection: 'row', alignItems: 'center', width: '30%', marginVertical: 30}}>
       <View style={{flex: 1, height: 1, backgroundColor: '#D4D4D4'}} />
       <View>
       <Text style={{width: 25, textAlign: 'center', color:'#BEBEBE' }}>or</Text>
@@ -81,9 +84,9 @@ export default function Authentification() {
     </View>
 
 
-
+        {/* Social links*/}
     <View style={styles.log_in_with}>
-      <Text style={{paddingHorizontal: '25%', paddingVertical: 5, color:'grey'}}>Login with</Text>
+      <Text style={{marginHorizontal: '27%', paddingVertical: 15, color:'grey', flexDirection: 'column'}}>Login with</Text>
       <View style={styles.all_socials_contaner}>
       <TouchableOpacity style={styles.socials_individual_container}>
         <Image source={google} style={styles.google_socials}/>
@@ -100,6 +103,7 @@ export default function Authentification() {
     </View>
 
 
+        {/* Not a member? signUp here*/}
     <View style={styles.go_to_signup}>
       <Text>
         Not a member?
@@ -131,6 +135,7 @@ const styles = StyleSheet.create({
   input_label_text_container: {
     width: '90%',
     marginVertical: 10,
+   
   },
 
   input_label: {
@@ -149,6 +154,8 @@ const styles = StyleSheet.create({
   remember_reset_container: {
     flexDirection: 'row',
     width: '90%',
+    alignItems: 'center',
+   
     
   },
 
@@ -161,14 +168,14 @@ const styles = StyleSheet.create({
   },
 
   remember_me_text: {
-    paddingHorizontal: 7,
+    paddingHorizontal: 10,
     paddingVertical: 5,
   },
 
   reset_password_conatiner: {
-    paddingHorizontal: 7,
+    paddingHorizontal: 10,
     paddingVertical: 5,
-    marginLeft: '30%'
+    marginHorizontal: '10%'
   },
 
   reset_password_text: {
@@ -190,13 +197,15 @@ const styles = StyleSheet.create({
   },
 
   log_in_with: {
-    width: '35%'
+    width: '50%',
+    
   },
 
   all_socials_contaner: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingBottom: 60
+    paddingBottom: 50,
+    paddingHorizontal: '10%'
   },
 
   socials_individual_container: {
@@ -220,9 +229,10 @@ const styles = StyleSheet.create({
   },
 
   go_to_signup: {
-    width: '45%',
+    width: '80%',
     flexDirection: 'row',
     alignContent: 'space-between',
+    paddingHorizontal: '15%'
   },
 
   signup_here_text: {
