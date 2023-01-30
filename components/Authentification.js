@@ -3,6 +3,9 @@ import { useState } from 'react';
 import Checkbox from 'expo-checkbox';
 import { StyleSheet, Image, useWindowDimensions, View, Text, TextInput, ScrollView, TouchableOpacity} from 'react-native';
 import believe_in_yourself from '../assets/images/believe_in_yourself.jpg'
+import google from '../assets/images/google.png'
+import facebook from '../assets/images/facebook.png'
+import linkedin from '../assets/images/linkedin.png'
 
 export default function Authentification() {
     const {height} = useWindowDimensions();
@@ -75,6 +78,25 @@ export default function Authentification() {
       <Text style={{width: 25, textAlign: 'center', color:'#BEBEBE' }}>or</Text>
       </View>
       <View style={{flex: 1, height: 1, backgroundColor: '#D4D4D4'}} />
+    </View>
+
+
+
+    <View style={styles.log_in_with}>
+      <Text style={{paddingHorizontal: '25%', paddingVertical: 5, color:'grey'}}>Login with</Text>
+      <View style={styles.all_socials_contaner}>
+      <TouchableOpacity style={styles.socials_individual_container}>
+        <Image source={google} style={styles.google_socials}/>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.socials_individual_container}>
+        <Image source={facebook} style={styles.facebook_socials}/>
+      </TouchableOpacity>
+
+      <TouchableOpacity style={styles.socials_individual_container}>
+        <Image source={linkedin} style={styles.linkedin_socials}/>
+      </TouchableOpacity>
+      </View>
     </View>
 
 
@@ -167,7 +189,38 @@ const styles = StyleSheet.create({
     alignItems: 'center'
   },
 
+  log_in_with: {
+    width: '35%'
+  },
+
+  all_socials_contaner: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingBottom: 60
+  },
+
+  socials_individual_container: {
+    paddingHorizontal: 10
+  },
+
+  google_socials: {
+    width: 24,
+    height: 24,
+
+  },
+
+  facebook_socials: {
+    width: 27,
+    height: 27,
+  },
+
+  linkedin_socials: {
+    width: 30,
+    height: 30
+  },
+
   go_to_signup: {
+    width: '45%',
     flexDirection: 'row',
     alignContent: 'space-between',
   },
