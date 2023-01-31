@@ -1,7 +1,7 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, SafeAreaView} from 'react-native';
-import SignInScreen from './components/SignInScreen';
-import SignUpScreen from './components/SignUpScreen';
+import SignInScreen from './Screens/SignInScreen';
+import SignUpScreen from './Screens/SignUpScreen';
 
 export default function App() {
 
