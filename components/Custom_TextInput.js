@@ -1,7 +1,7 @@
 import { StyleSheet, Text, View, TextInput, } from 'react-native'
 import React from 'react'
 
-export default function Custom_TextInput({placeholder, onChangeText, secureTextEntry}) {
+export default function Custom_TextInput({placeholder, onChangeText, secureTextEntry, text}) {
   return (
 
     <View style={styles.input_label_text_container}>

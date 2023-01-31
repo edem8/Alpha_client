@@ -1,5 +1,9 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
+import {
+  responsiveHeight,
+  responsiveWidth,
+} from "react-native-responsive-dimensions";
 import { StyleSheet, Image, View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import believe_in_yourself from '../assets/images/believe_in_yourself.jpg';
 import google from '../assets/images/google.png'
@@ -16,13 +20,13 @@ export default function SignInScreen() {
     const [password, setPassword] = useState("");
 
   return (
-    <ScrollView showsVerticalScrollIndicator={false}>
+    <ScrollView style={styles.ScrollView}>
     <View style={styles.container}>
 
       {/*Cover Image */}
     <Custom_Cover_image  
         source={believe_in_yourself}
-        resizeMode={'Cover'}/>
+        resizeMode={'cover'}/>
     
         {/* Placeholder for Eamil Entry */}
     <Custom_TextInput 
@@ -56,7 +60,7 @@ export default function SignInScreen() {
     
         {/* Horizontal "or" rule*/}
     <View style={{flexDirection: 'row', alignItems: 'center', width: '30%', marginVertical: 30,}}>
-      <View style={{flex: .4, height: 1, backgroundColor: '#D4D4D4'}} />
+      <View style={{flex: .5, height: 1, backgroundColor: '#D4D4D4'}} />
       <View>
       <Text style={{flex: 1, width: 25, textAlign: 'center', color:'#BEBEBE' }}>or</Text>
       </View>
@@ -64,9 +68,10 @@ export default function SignInScreen() {
     </View>
 
 
+    <Text style={{paddingHorizontal: '33%', paddingVertical: 15, color:'grey', flexDirection: 'column',}}>Login with</Text>
+
         {/* Social links*/}
     <View style={styles.log_in_with}>
-      <Text style={{paddingHorizontal: '33%', paddingVertical: 15, color:'grey', flexDirection: 'column'}}>Login with</Text>
       <View style={styles.all_socials_contaner}>
       <TouchableOpacity style={styles.socials_individual_container}>
         <Image source={google} style={styles.google_socials}/>
@@ -84,8 +89,9 @@ export default function SignInScreen() {
 
 
         {/* Not a member? signUp here*/}
+    <View style={{width: responsiveWidth(100),}}>
     <View style={styles.go_to_signup}>
-      <Text>
+      <Text style={styles.member}>
         Not a member?
       </Text>
       <TouchableOpacity>
@@ -94,6 +100,7 @@ export default function SignInScreen() {
         </Text>
       </TouchableOpacity>
     </View>
+    </View>
     
     </View>
     </ScrollView>
@@ -101,8 +108,14 @@ export default function SignInScreen() {
 }
 
 const styles = StyleSheet.create({
+  ScrollView: {
+    height: responsiveHeight(100),
+    width: responsiveWidth(100), 
+  },
+
   container: {
-    alignItems: 'center',
+    alignItems: "center",
+    justifyContent: "center",
     },
 
   remember_reset_container: {
@@ -128,14 +141,16 @@ const styles = StyleSheet.create({
   },
 
   log_in_with: {
-    width: '60%',
+    width: responsiveWidth(60),
+    
   },
 
   all_socials_contaner: {
     flexDirection: 'row',
     alignItems: 'center',
-    paddingBottom: 50,
-    paddingHorizontal: 5
+    paddingBottom: 30,
+    paddingVertical: 10,
+    paddingHorizontal: 7
     
   },
 
@@ -144,29 +159,38 @@ const styles = StyleSheet.create({
   },
 
   google_socials: {
-    width: 24,
-    height: 24,
+    width: 29,
+    height: 29,
   },
 
   facebook_socials: {
-    width: 27,
-    height: 27,
+    width: 32,
+    height: 32,
   },
 
   linkedin_socials: {
-    width: 30,
-    height: 30
+    width: 35,
+    height: 35
   },
 
   go_to_signup: {
-    width: '80%',
+    width: responsiveWidth(70),
     flexDirection: 'row',
-    alignContent: 'space-between',
-    paddingHorizontal: '15%'
+    justifyContent: 'center',
+    alignItems: 'center',
+    paddingVertical: 15,
+    paddingHorizontal: 0,
+
+    marginHorizontal: 60
+  },
+
+  member: {
+    marginEnd: 5
   },
 
   signup_here_text: {
     color: '#3388FF',
-    paddingHorizontal: 5,
+    marginStart: 1,
+  
   },
 });

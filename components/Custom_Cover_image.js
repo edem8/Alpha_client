@@ -1,13 +1,16 @@
-import { StyleSheet, Image, useWindowDimensions } from 'react-native'
+import { StyleSheet, Image,} from 'react-native'
 import React from 'react'
-
+import {
+  responsiveHeight,
+  responsiveWidth,
+  responsiveFontSize
+} from "react-native-responsive-dimensions";
 export default function Custom_Cover_image({source, resizeMode}) {
-    const {height} = useWindowDimensions();
-    const {width} = useWindowDimensions();
+  
   return (
     <Image
     source={source}
-    style={[styles.believe_in_yourself, {height: height * .3}, {width: width * 1}]}
+    style={[styles.believe_in_yourself, {height: responsiveHeight(30)}, {width: responsiveWidth(100)}]}
     resizeMode= {resizeMode} />
     
   )
@@ -16,7 +19,7 @@ export default function Custom_Cover_image({source, resizeMode}) {
 const styles = StyleSheet.create({
     
   believe_in_yourself: {
-        
+    
     maxWidth: 600,
     maxHeight: 500,
    
