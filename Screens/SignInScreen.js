@@ -1,6 +1,6 @@
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { StyleSheet, Image, useWindowDimensions, View, Text, ScrollView, TouchableOpacity} from 'react-native';
+import { StyleSheet, Image, View, Text, ScrollView, TouchableOpacity} from 'react-native';
 import believe_in_yourself from '../assets/images/believe_in_yourself.jpg';
 import google from '../assets/images/google.png'
 import facebook from '../assets/images/facebook.png'
@@ -8,22 +8,21 @@ import linkedin from '../assets/images/linkedin.png'
 import Custom_Checkbox from '../components/Custom_Checkbox';
 import Custom_TextInput from '../components/Custom_TextInput';
 import Custom_Submit from '../components/Custom_Submit';
+import Custom_Cover_image from '../components/Custom_Cover_image';
 
 
 export default function SignInScreen() {
-    const {height} = useWindowDimensions();
-    const {width} = useWindowDimensions();
-
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
   return (
     <ScrollView showsVerticalScrollIndicator={false}>
     <View style={styles.container}>
-    <Image
-    source={believe_in_yourself}
-    style={[styles.believe_in_yourself, {height: height * .3}, {width: width * 1}]}
-    resizeMode= 'cover' />
+
+      {/*Cover Image */}
+    <Custom_Cover_image  
+        source={believe_in_yourself}
+        resizeMode={'Cover'}/>
     
         {/* Placeholder for Eamil Entry */}
     <Custom_TextInput 
@@ -56,18 +55,18 @@ export default function SignInScreen() {
     <Custom_Submit text = 'Submit'/>
     
         {/* Horizontal "or" rule*/}
-    <View style={{flexDirection: 'row', alignItems: 'center', width: '30%', marginVertical: 30}}>
-      <View style={{flex: 1, height: 1, backgroundColor: '#D4D4D4'}} />
+    <View style={{flexDirection: 'row', alignItems: 'center', width: '30%', marginVertical: 30,}}>
+      <View style={{flex: .4, height: 1, backgroundColor: '#D4D4D4'}} />
       <View>
-      <Text style={{width: 25, textAlign: 'center', color:'#BEBEBE' }}>or</Text>
+      <Text style={{flex: 1, width: 25, textAlign: 'center', color:'#BEBEBE' }}>or</Text>
       </View>
-      <View style={{flex: 1, height: 1, backgroundColor: '#D4D4D4'}} />
+      <View style={{flex: .5, height: 1, backgroundColor: '#D4D4D4'}} />
     </View>
 
 
         {/* Social links*/}
     <View style={styles.log_in_with}>
-      <Text style={{marginHorizontal: '30%', paddingVertical: 15, color:'grey', flexDirection: 'column'}}>Login with</Text>
+      <Text style={{paddingHorizontal: '33%', paddingVertical: 15, color:'grey', flexDirection: 'column'}}>Login with</Text>
       <View style={styles.all_socials_contaner}>
       <TouchableOpacity style={styles.socials_individual_container}>
         <Image source={google} style={styles.google_socials}/>
@@ -105,13 +104,6 @@ const styles = StyleSheet.create({
   container: {
     alignItems: 'center',
     },
-
-  believe_in_yourself: {
-        
-    maxWidth: 600,
-    maxHeight: 500,
-   
-  },
 
   remember_reset_container: {
     flexDirection: 'row',

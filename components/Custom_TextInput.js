@@ -1,11 +1,11 @@
-import { StyleSheet, Text, View, TextInput } from 'react-native'
+import { StyleSheet, Text, View, TextInput, } from 'react-native'
 import React from 'react'
 
 export default function Custom_TextInput({placeholder, onChangeText, secureTextEntry}) {
   return (
 
     <View style={styles.input_label_text_container}>
-    <Text style={styles.input_label}>Username Or Email</Text>
+    <Text style={styles.input_label}>{placeholder}</Text>
     <View style={styles.input_text_container}>
         <TextInput
         placeholder= {placeholder}
