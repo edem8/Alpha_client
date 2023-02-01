@@ -94,7 +94,7 @@ export default function SignInScreen({navigation}) {
       <Text style={styles.member}>
         Not a member?
       </Text>
-      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+      <TouchableOpacity onPress={() => navigation.navigate('signUp')}>
         <Text style={styles.signup_here_text}>
           Sign Up here
         </Text>

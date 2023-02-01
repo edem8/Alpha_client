@@ -115,7 +115,7 @@ export default function SignUpScreen({navigation}) {
 
       <View style={{flexDirection: 'row', marginTop: 20}}>
         <Text>Already a member?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+        <TouchableOpacity onPress={() => navigation.navigate('signIn')}>
           <Text style={{color: '#3388FF', marginHorizontal: 5, marginBottom: 30}}>
             LogIn here
           </Text>

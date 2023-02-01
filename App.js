@@ -5,6 +5,7 @@ import {
 } from "react-native-responsive-dimensions";
 import SignInScreen from './Screens/SignInScreen';
 import SignUpScreen from './Screens/SignUpScreen';
+import Dashboard from './Screens/Dashboard';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 
@@ -17,8 +18,9 @@ export default function App() {
     
     <NavigationContainer styles={styles.root}>
       <Stack.Navigator initialRouteName="SignIn">  
-        <Stack.Screen name="SignIn" component={SignInScreen} options={{headerShown: false}} />
-        <Stack.Screen name="SignUp" component={SignUpScreen} options={{headerShown: false}}/>
+        <Stack.Screen name="signIn" component={SignInScreen} options={{headerShown: false}} />
+        <Stack.Screen name="signUp" component={SignUpScreen} options={{headerShown: false}} />
+        <Stack.Screen name="dashboard" component={Dashboard} options={{headerShown: false}} />
       </Stack.Navigator>
     </NavigationContainer>
   
