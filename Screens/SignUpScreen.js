@@ -1,4 +1,4 @@
-import { Text, View, StyleSheet, TouchableOpacity, ScrollView, TextInput } from 'react-native'
+import { Text, View, StyleSheet, TouchableOpacity, ScrollView, TextInput, StatusBar} from 'react-native'
 import React from 'react'
 import {
   responsiveHeight,
@@ -11,7 +11,7 @@ import Custom_TextInput from '../components/Custom_TextInput'
 import Custom_Checkbox from '../components/Custom_Checkbox'
 import Custom_Submit from '../components/Custom_Submit'
 
-export default function SignUpScreen() {
+export default function SignUpScreen({navigation}) {
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
 
@@ -88,7 +88,7 @@ export default function SignUpScreen() {
        <Text>I Agree to the</Text>
        <TouchableOpacity style={{marginHorizontal: 2}}>
         <Text style={{color: '#3388FF'}}>
-          terms
+          terms,
         </Text>
        </TouchableOpacity>
 
@@ -115,8 +115,8 @@ export default function SignUpScreen() {
 
       <View style={{flexDirection: 'row', marginTop: 20}}>
         <Text>Already a member?</Text>
-        <TouchableOpacity>
-          <Text style={{color: '#3388FF', marginHorizontal: 5}}>
+        <TouchableOpacity onPress={() => navigation.navigate('SignIn')}>
+          <Text style={{color: '#3388FF', marginHorizontal: 5, marginBottom: 30}}>
             LogIn here
           </Text>
         </TouchableOpacity>
@@ -132,11 +132,13 @@ const styles = StyleSheet.create({
   ScrollView: {
     height: responsiveHeight(100),
     width: responsiveWidth(100), 
+    
   },
 
   container: {
     justifyContent: "center",
-    alignItems: "center"
+    alignItems: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     
     },
   

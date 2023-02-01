@@ -1,4 +1,4 @@
-import { StatusBar } from 'expo-status-bar';
+import { StatusBar } from 'react-native';
 import { useState } from 'react';
 import {
   responsiveHeight,
@@ -15,7 +15,7 @@ import Custom_Submit from '../components/Custom_Submit';
 import Custom_Cover_image from '../components/Custom_Cover_image';
 
 
-export default function SignInScreen() {
+export default function SignInScreen({navigation}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
 
@@ -94,7 +94,7 @@ export default function SignInScreen() {
       <Text style={styles.member}>
         Not a member?
       </Text>
-      <TouchableOpacity>
+      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
         <Text style={styles.signup_here_text}>
           Sign Up here
         </Text>
@@ -111,11 +111,13 @@ const styles = StyleSheet.create({
   ScrollView: {
     height: responsiveHeight(100),
     width: responsiveWidth(100), 
+    
   },
 
   container: {
     alignItems: "center",
     justifyContent: "center",
+    paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
 
   remember_reset_container: {
@@ -180,8 +182,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingVertical: 15,
     paddingHorizontal: 0,
-
-    marginHorizontal: 60
+    marginHorizontal: 60,
   },
 
   member: {

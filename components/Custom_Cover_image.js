@@ -10,7 +10,7 @@ export default function Custom_Cover_image({source, resizeMode}) {
   return (
     <Image
     source={source}
-    style={[styles.believe_in_yourself, {height: responsiveHeight(30)}, {width: responsiveWidth(100)}]}
+    style={[styles.believe_in_yourself, {height: responsiveHeight(35)}, {width: responsiveWidth(100)}]}
     resizeMode= {resizeMode} />
     
   )
