@@ -11,7 +11,7 @@ import facebook from '../assets/images/facebook.png'
 import linkedin from '../assets/images/linkedin.png'
 import Custom_Checkbox from '../components/Custom_Checkbox';
 import Custom_TextInput from '../components/Custom_TextInput';
-import Custom_Submit from '../components/Custom_Submit';
+import Custom_Button from '../components/Custom_Button';
 import Custom_Cover_image from '../components/Custom_Cover_image';
 
 
@@ -28,7 +28,7 @@ export default function SignInScreen({navigation}) {
         source={believe_in_yourself}
         resizeMode={'cover'}/>
     
-        {/* Placeholder for Eamil Entry */}
+        {/* Placeholder for Username and Eamil Entry */}
     <Custom_TextInput 
         placeholder= 'Username or Email'
         onChangeText={(email) => setEmail(email)}
@@ -56,7 +56,13 @@ export default function SignInScreen({navigation}) {
 
         {/* Submit Button*/}
  
-    <Custom_Submit text = 'Submit'/>
+        <Custom_Button
+      navigation={navigation}
+      text={'Submit'}
+      type="PRIMARY"
+  
+      
+      />
     
         {/* Horizontal "or" rule*/}
     <View style={{flexDirection: 'row', alignItems: 'center', width: '30%', marginVertical: 30,}}>
@@ -94,7 +100,7 @@ export default function SignInScreen({navigation}) {
       <Text style={styles.member}>
         Not a member?
       </Text>
-      <TouchableOpacity onPress={() => navigation.navigate('signUp')}>
+      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
         <Text style={styles.signup_here_text}>
           Sign Up here
         </Text>

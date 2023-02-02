@@ -9,7 +9,7 @@ import believe_in_yourself from '../assets/images/believe_in_yourself.jpg'
 import Custom_Cover_image from '../components/Custom_Cover_image'
 import Custom_TextInput from '../components/Custom_TextInput'
 import Custom_Checkbox from '../components/Custom_Checkbox'
-import Custom_Submit from '../components/Custom_Submit'
+import Custom_Button from '../components/Custom_Button';
 
 export default function SignUpScreen({navigation}) {
     const [email, setEmail] = useState();
@@ -22,9 +22,14 @@ export default function SignUpScreen({navigation}) {
       source={believe_in_yourself}
       resizeMode={'cover'}/>
 
+      <Custom_TextInput
+        placeholder={'Username'}
+        onChangeText={setEmail}
+      />
+
 
       <Custom_TextInput
-        placeholder={'Username  or Email'}
+        placeholder={'Email'}
         onChangeText={setEmail}
       />
 
@@ -108,14 +113,18 @@ export default function SignUpScreen({navigation}) {
       </View>
 
 
-      <Custom_Submit
+      <Custom_Button
+      navigation={navigation}
       text={'Submit'}
+      type="PRIMARY"
+      nav_screen = "SignIn"
+      
       />
 
 
       <View style={{flexDirection: 'row', marginTop: 20}}>
         <Text>Already a member?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('signIn')}>
+        <TouchableOpacity onPress={() => navigation.navigate('Confirm Email')}>
           <Text style={{color: '#3388FF', marginHorizontal: 5, marginBottom: 30}}>
             LogIn here
           </Text>

@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
   input_label_text_container: {
     width: '90%',
     marginVertical: 10,
-   
+    paddingVertical: 5
   },
 
   input_label: {
@@ -36,7 +36,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 10,
-    paddingVertical: 7
+    paddingVertical: 11
   },
 
 });

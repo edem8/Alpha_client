@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
     
   believe_in_yourself: {
     
-    maxWidth: 600,
-    maxHeight: 500,
+    maxWidth: 500,
+    maxHeight: 400,
    
   },
 });
