@@ -3,12 +3,17 @@ import {
   responsiveHeight,
   responsiveWidth,
 } from "react-native-responsive-dimensions";
+
 import SignInScreen from './Screens/SignInScreen';
 import SignUpScreen from './Screens/SignUpScreen';
 import ConfirmEmailScreen from './Screens/ConfirmEmailScreen';
 import ResetPasswordScreen from './Screens/ResetPasswordScreen';
+import NewPasswordScreen from './Screens/NewPasswordScreen';
+import HomeScreen from './Screens/HomeScreen';
+
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+
 
 
 const Stack = createNativeStackNavigator();
@@ -18,8 +23,13 @@ export default function App() {
   return (
     
     <NavigationContainer styles={styles.root}>
-      <Stack.Navigator initialRouteName="SignIn">
-        <Stack.Screen name="Reset Password" component={ResetPasswordScreen} options={{headerShown: false}} /> 
+      <Stack.Navigator initialRouteName="SignIn" screenOptions={{headerShown: false}}>
+        <Stack.Screen name='HomeScreen' component={HomeScreen}/>
+        <Stack.Screen name="SignIn" component={SignInScreen} />
+        <Stack.Screen name="SignUp" component={SignUpScreen} /> 
+        <Stack.Screen name="ConfirmMail" component={ConfirmEmailScreen}  /> 
+        <Stack.Screen name="ResetPassword" component={ResetPasswordScreen}  /> 
+        <Stack.Screen name="NewPassword" component={NewPasswordScreen} /> 
         
       </Stack.Navigator>
     </NavigationContainer>

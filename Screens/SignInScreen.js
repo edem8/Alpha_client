@@ -1,14 +1,13 @@
 import { StatusBar } from 'react-native';
 import { useState } from 'react';
-import {
-  responsiveHeight,
-  responsiveWidth,
-} from "react-native-responsive-dimensions";
+import {responsiveHeight, responsiveWidth,} from "react-native-responsive-dimensions";
 import { StyleSheet, Image, View, Text, ScrollView, TouchableOpacity} from 'react-native';
+
 import believe_in_yourself from '../assets/images/believe_in_yourself.jpg';
 import google from '../assets/images/google.png'
 import facebook from '../assets/images/facebook.png'
 import linkedin from '../assets/images/linkedin.png'
+
 import Custom_Checkbox from '../components/Custom_Checkbox';
 import Custom_TextInput from '../components/Custom_TextInput';
 import Custom_Button from '../components/Custom_Button';
@@ -18,6 +17,19 @@ import Custom_Cover_image from '../components/Custom_Cover_image';
 export default function SignInScreen({navigation}) {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+
+    const onSignUpHerePressed = () => {
+      navigation.navigate('SignUp')
+    };
+
+    const onSubmitButtonPressed = () => {
+      console.log(alert('onSubmitButtonPressed'));
+      navigation.navigate('HomeScreen')
+    };
+
+    const onResetPasswordPressed = () => {
+      navigation.navigate('ResetPassword')
+    }
 
   return (
     <ScrollView style={styles.ScrollView}>
@@ -47,7 +59,7 @@ export default function SignInScreen({navigation}) {
       <Custom_Checkbox />
 
       <Text style={styles.remember_me_text}>Remember me</Text>
-      <TouchableOpacity style={styles.reset_password_conatiner}>
+      <TouchableOpacity onPress={onResetPasswordPressed} style={styles.reset_password_conatiner}>
       <Text style={styles.reset_password_text}>
         Reset Password
       </Text>
@@ -56,13 +68,7 @@ export default function SignInScreen({navigation}) {
 
         {/* Submit Button*/}
  
-        <Custom_Button
-      navigation={navigation}
-      text={'Submit'}
-      type="PRIMARY"
-  
-      
-      />
+    <Custom_Button text={'Submit'} type="PRIMARY" onPress={onSubmitButtonPressed} />
     
         {/* Horizontal "or" rule*/}
     <View style={{flexDirection: 'row', alignItems: 'center', width: '30%', marginVertical: 30,}}>
@@ -100,7 +106,7 @@ export default function SignInScreen({navigation}) {
       <Text style={styles.member}>
         Not a member?
       </Text>
-      <TouchableOpacity onPress={() => navigation.navigate('SignUp')}>
+      <TouchableOpacity onPress={onSignUpHerePressed}>
         <Text style={styles.signup_here_text}>
           Sign Up here
         </Text>

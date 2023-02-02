@@ -1,10 +1,10 @@
 import { StyleSheet, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 
-export default function Custom_Buttons({text, type}) {
+export default function Custom_Buttons({text, type, onPress}) {
   
   return (
-    <TouchableOpacity style={[styles.submit_button_container, styles[`submit_button_container_${type}`]]}>
+    <TouchableOpacity onPress={onPress} style={[styles.submit_button_container, styles[`submit_button_container_${type}`]]}>
         <Text style={[styles.submit_button_text, styles[`submit_button_text_${type}`]]}>
             {text}
         </Text>

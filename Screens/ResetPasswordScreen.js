@@ -9,19 +9,27 @@ import Custom_TextInput from '../components/Custom_TextInput';
 import Custom_Button from '../components/Custom_Button';
 
 export default function ResetPasswordScreen({navigation}) {
-  const [code, setCode] = useState("");
+  const [email, setEmail] = useState("");
+
+  const onSendButtonPressed = () => {
+    navigation.navigate('NewPassword')
+  }
+
+  const onBackToSignInButtonPressed = () => {
+    navigation.navigate('SignIn')
+  }
+
   return (
     <SafeAreaView style={styles.root}>
-      <Text style={styles.title}>Confirm your email</Text>
+      <Text style={styles.title}>Reset your password</Text>
 
       <Custom_TextInput
-        placeholder={'Enter confirmation code'}
-        onChangeText={setCode}
+        placeholder={'Enter your email'}
+        onChangeText={setEmail}
       />
 
-      <Custom_Button text={'Confirm'} type="PRIMARY"/>
-      <Custom_Button text={'Resend code'} type="SECONDARY"/>
-      <Custom_Button text={'Back to Sign In'} type="TERTIARY" 
+      <Custom_Button text={'Send'} type="PRIMARY" onPress={onSendButtonPressed}  />
+      <Custom_Button text={'Back to Sign In'} type="TERTIARY" onPress={onBackToSignInButtonPressed}
       />        
       </SafeAreaView>
   )

@@ -12,8 +12,24 @@ import Custom_Checkbox from '../components/Custom_Checkbox'
 import Custom_Button from '../components/Custom_Button';
 
 export default function SignUpScreen({navigation}) {
+    const [Username, setUsername] = useState();
     const [email, setEmail] = useState();
     const [password, setPassword] = useState();
+    const [ConfirmPassword, setConfirmPassword] = useState();
+    const [postcode, setPostcode] = useState();
+    const [phone, setPhone] = useState();
+    const [fitnessgoals, setFitnessgoals] = useState();
+
+
+
+    const onSubmitButtonPressed = () => {
+      navigation.navigate('ConfirmMail')
+    };
+
+    const onLoginHerePressed = () => {
+      console.log(alert('onSubmitButtonPressed'));
+      navigation.navigate('SignIn')
+    };
 
   return (
     <ScrollView style={styles.ScrollView}>
@@ -24,7 +40,7 @@ export default function SignUpScreen({navigation}) {
 
       <Custom_TextInput
         placeholder={'Username'}
-        onChangeText={setEmail}
+        onChangeText={setUsername}
       />
 
 
@@ -41,7 +57,7 @@ export default function SignUpScreen({navigation}) {
 
       <Custom_TextInput
         placeholder={'Confirm password'}
-        onChangeText={setPassword}
+        onChangeText={setConfirmPassword}
         secureTextEntry = {true}
       />
 
@@ -51,7 +67,7 @@ export default function SignUpScreen({navigation}) {
       <View style={styles.input_text_container}>
         <TextInput
         placeholder= 'Postcode'
-        onChangeText= {setEmail}
+        onChangeText= {setPostcode}
         style={styles.input_text}/>
     
       </View>
@@ -63,7 +79,7 @@ export default function SignUpScreen({navigation}) {
       <View style={styles.input_text_container}>
         <TextInput
         placeholder= 'Phone Number'
-        onChangeText= {setEmail}
+        onChangeText= {setPhone}
         style={styles.input_text}/>
     
       </View>
@@ -72,7 +88,7 @@ export default function SignUpScreen({navigation}) {
      
       <Custom_TextInput
        placeholder={'What are your fitness goals?'}
-       onChangeText={setEmail}
+       onChangeText={setFitnessgoals}
      
        />
 
@@ -114,7 +130,7 @@ export default function SignUpScreen({navigation}) {
 
 
       <Custom_Button
-      navigation={navigation}
+      onPress={onSubmitButtonPressed}
       text={'Submit'}
       type="PRIMARY"
       nav_screen = "SignIn"
@@ -124,7 +140,7 @@ export default function SignUpScreen({navigation}) {
 
       <View style={{flexDirection: 'row', marginTop: 20}}>
         <Text>Already a member?</Text>
-        <TouchableOpacity onPress={() => navigation.navigate('Confirm Email')}>
+        <TouchableOpacity onPress={onLoginHerePressed}>
           <Text style={{color: '#3388FF', marginHorizontal: 5, marginBottom: 30}}>
             LogIn here
           </Text>
