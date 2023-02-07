@@ -36,7 +36,7 @@ export default function SignUpScreen({navigation}) {
     <View style={styles.container}>
       <Custom_Cover_image 
       source={believe_in_yourself}
-      resizeMode={'cover'}/>
+      resizeMode={'auto'}/>
 
       <Custom_TextInput
         placeholder={'Username'}

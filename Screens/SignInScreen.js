@@ -24,7 +24,7 @@ export default function SignInScreen({navigation}) {
 
     const onSubmitButtonPressed = () => {
       console.log(alert('onSubmitButtonPressed'));
-      navigation.navigate('HomeScreen')
+      
     };
 
     const onResetPasswordPressed = () => {
@@ -38,7 +38,7 @@ export default function SignInScreen({navigation}) {
       {/*Cover Image */}
     <Custom_Cover_image  
         source={believe_in_yourself}
-        resizeMode={'cover'}/>
+        resizeMode={'auto'}/>
     
         {/* Placeholder for Username and Eamil Entry */}
     <Custom_TextInput 

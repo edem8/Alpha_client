@@ -1,65 +1,56 @@
-import { ImageBackground, StyleSheet, Text, View } from 'react-native'
+import { ImageBackground, StyleSheet, Text, TouchableOpacity, View } from 'react-native'
 import React from 'react'
-import AppLoading from 'expo-app-loading';
 import {
   useFonts,
-  FiraSans_100Thin,
-  FiraSans_100Thin_Italic,
-  FiraSans_200ExtraLight,
-  FiraSans_200ExtraLight_Italic,
-  FiraSans_300Light,
-  FiraSans_300Light_Italic,
-  FiraSans_400Regular,
-  FiraSans_400Regular_Italic,
-  FiraSans_500Medium,
-  FiraSans_500Medium_Italic,
-  FiraSans_600SemiBold,
-  FiraSans_600SemiBold_Italic,
-  FiraSans_700Bold,
-  FiraSans_700Bold_Italic,
-  FiraSans_800ExtraBold,
-  FiraSans_800ExtraBold_Italic,
-  FiraSans_900Black,
-  FiraSans_900Black_Italic,
-} from '@expo-google-fonts/fira-sans';
-import {responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
+  OpenSans_400Regular,
+  OpenSans_600SemiBold,
+  OpenSans_700Bold,
+  OpenSans_800ExtraBold,
+} from '@expo-google-fonts/open-sans';
 
+import {responsiveHeight, responsiveWidth, responsiveFontSize} from "react-native-responsive-dimensions";
 import HomeBackground from '../assets/images/HomeBackground.jpg'
 
-export default function HomeScreen() {
+
+
+export default function HomeScreen({navigation}) {
+  const onLoginPressed = () => {navigation.navigate('SignIn')}
+  const onRegisterPressed = () => {navigation.navigate('SignUp')}
   let [fontsLoaded] = useFonts({
-    FiraSans_100Thin,
-    FiraSans_100Thin_Italic,
-    FiraSans_200ExtraLight,
-    FiraSans_200ExtraLight_Italic,
-    FiraSans_300Light,
-    FiraSans_300Light_Italic,
-    FiraSans_400Regular,
-    FiraSans_400Regular_Italic,
-    FiraSans_500Medium,
-    FiraSans_500Medium_Italic,
-    FiraSans_600SemiBold,
-    FiraSans_600SemiBold_Italic,
-    FiraSans_700Bold,
-    FiraSans_700Bold_Italic,
-    FiraSans_800ExtraBold,
-    FiraSans_800ExtraBold_Italic,
-    FiraSans_900Black,
-    FiraSans_900Black_Italic,
+    OpenSans_400Regular,
+    OpenSans_600SemiBold, 
+    OpenSans_700Bold,
+    OpenSans_800ExtraBold,
   });
 
+
   if (!fontsLoaded) {
-    return <AppLoading />;
+   
+      return null;
   } else{
   return (
     <View style={styles.root}>
         <ImageBackground source={HomeBackground} style={styles.HomeBackground} resizeMode="cover">
-          
-          <View style={styles.Descritption}>
-          <Text style={styles.Descritption_1}>TRAIN WITH </Text>
-          <Text style={styles.Descritption_2}>THE BEST</Text>
-          <Text style={styles.Descritption_3}>FITNESS COACH</Text>
-          </View>
+        
+        <View style={{width: responsiveWidth(90), alignItems: 'center', marginTop: responsiveHeight(50)}}>
+          <Text style={{color: '#fff', fontFamily: 'OpenSans_800ExtraBold', fontSize: 30}}>Personal Trainers Within</Text>
+          <Text style={{color: "#55AAFF", fontFamily: 'OpenSans_800ExtraBold', fontSize: 25}}>Your Postcode</Text>
+        </View>
+
+
+        <Text style={{color:"#fff", fontFamily: 'OpenSans_800ExtraBold', marginVertical:10, fontSize: 15 }}>Start your journey with Alpha</Text>
+
+        <View style={styles.Buttons}>
+          <TouchableOpacity onPress={onLoginPressed} style={{borderRadius: 9, backgroundColor: '#55AAFF', paddingHorizontal: 20, paddingVertical: 10}}>
+            <Text style={{color: 'white', fontFamily: 'OpenSans_800ExtraBold', fontSize: 18}}>Login</Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity onPress={onRegisterPressed} style={{borderRadius: 9, backgroundColor: '#55AAFF', paddingHorizontal: 16, paddingVertical: 10}}>
+            <Text style={{color: 'white', fontFamily: 'OpenSans_800ExtraBold', fontSize: 18}}>Register</Text>
+          </TouchableOpacity>
+        </View>
+         
+        
           
         </ImageBackground>
         
@@ -71,11 +62,18 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
     root: {
         flex: 1,
+        width: responsiveWidth(100),
+        height: responsiveHeight(100),
+        alignItems: 'center',
+        justifyContent: 'center',
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0
     },
 
     HomeBackground: {
         width: responsiveWidth(100),
         height: responsiveHeight(100),
+        alignItems: 'center',
+        justifyContent: 'center'
     },
 
     Descritption: {
@@ -87,19 +85,28 @@ const styles = StyleSheet.create({
     Descritption_1: {
       color: 'white',
       fontSize: responsiveFontSize(3),
-      fontFamily:"FiraSans_200ExtraLight"
+      fontFamily:"OpenSans_400Regular"
     },
 
     Descritption_2: {
-      color: 'orange',
+      color: "white",
       fontSize: responsiveFontSize(4),
-      fontFamily:"FiraSans_300Light"
+      fontFamily:"OpenSans_700Bold"
      
     },
     
     Descritption_3: {
-      color: "white",
+      color:"#55AAFF",
       fontSize: responsiveFontSize(5),
-      fontFamily: "FiraSans_400Regular"
+      fontFamily: "OpenSans_800ExtraBold"
+    },
+
+    Buttons: {
+      flexDirection: 'row',
+      width: responsiveWidth(100),
+      alignItems: 'center',
+      justifyContent: 'space-evenly',
+      marginTop: responsiveHeight(10),
+     
     },
 });
