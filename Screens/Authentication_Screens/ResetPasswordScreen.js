@@ -5,8 +5,8 @@ import {
     responsiveHeight,
     responsiveWidth,
   } from "react-native-responsive-dimensions";
-import Custom_TextInput from '../components/Custom_TextInput';
-import Custom_Button from '../components/Custom_Button';
+import Custom_TextInput from '../../components/Custom_TextInput';
+import Custom_Button from '../../components/Custom_Button';
 
 export default function ResetPasswordScreen({navigation}) {
   const [email, setEmail] = useState("");

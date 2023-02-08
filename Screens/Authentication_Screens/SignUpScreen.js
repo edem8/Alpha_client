@@ -6,10 +6,10 @@ import {
 } from "react-native-responsive-dimensions";
 import { useState } from 'react'
 import believe_in_yourself from '../assets/images/believe_in_yourself.jpg'
-import Custom_Cover_image from '../components/Custom_Cover_image'
-import Custom_TextInput from '../components/Custom_TextInput'
-import Custom_Checkbox from '../components/Custom_Checkbox'
-import Custom_Button from '../components/Custom_Button';
+import Custom_Cover_image from '../../components/Custom_Cover_image'
+import Custom_TextInput from '../../components/Custom_TextInput'
+import Custom_Checkbox from '../../components/Custom_Checkbox'
+import Custom_Button from '../../components/Custom_Button';
 
 export default function SignUpScreen({navigation}) {
     const [Username, setUsername] = useState();

@@ -8,10 +8,10 @@ import google from '../assets/images/google.png'
 import facebook from '../assets/images/facebook.png'
 import linkedin from '../assets/images/linkedin.png'
 
-import Custom_Checkbox from '../components/Custom_Checkbox';
-import Custom_TextInput from '../components/Custom_TextInput';
-import Custom_Button from '../components/Custom_Button';
-import Custom_Cover_image from '../components/Custom_Cover_image';
+import Custom_Checkbox from '../../components/Custom_Checkbox';
+import Custom_TextInput from '../../components/Custom_TextInput';
+import Custom_Button from '../../components/Custom_Button';
+import Custom_Cover_image from '../../components/Custom_Cover_image';
 
 
 export default function SignInScreen({navigation}) {

@@ -13,7 +13,7 @@ import HomeBackground from '../assets/images/HomeBackground.jpg'
 
 
 
-export default function HomeScreen({navigation}) {
+export default function OnBoardingScreen({navigation}) {
   const onLoginPressed = () => {navigation.navigate('SignIn')}
   const onRegisterPressed = () => {navigation.navigate('SignUp')}
   let [fontsLoaded] = useFonts({

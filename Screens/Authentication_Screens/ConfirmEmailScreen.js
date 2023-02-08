@@ -5,38 +5,35 @@ import {
     responsiveHeight,
     responsiveWidth,
   } from "react-native-responsive-dimensions";
-import Custom_TextInput from '../components/Custom_TextInput';
-import Custom_Button from '../components/Custom_Button';
+import Custom_TextInput from '../../components/Custom_TextInput';
+import Custom_Button from '../../components/Custom_Button';
 
-export default function NewPasswordScreen({navigation}) {
-  const [Newpassword, setNewpassword] = useState("");
-  const [confirmPassword, setConfirmPassword] = useState("");
-  
-  const onSaveButtonPressed = () => {
-    console.log(alert('onSaveButtonPressed'))
+export default function Confirm_Email({navigation}) {
+  const [code, setCode] = useState("");
+
+  const onConfirmPressed = () => {
+    alert("onConfirmPressed");
+  }
+
+  const onResendCodePressed = () => {
+    alert("onResendCodePressed");
   }
 
   const onBackToSignInPressed = () => {
+    alert("onBackToSignInPressed");
     navigation.navigate('SignIn')
   }
-
   return (
     <SafeAreaView style={styles.root}>
-      <Text style={styles.title}>Reset your password</Text>
+      <Text style={styles.title}>Confirm your email</Text>
 
       <Custom_TextInput
-        placeholder={'New Password'}
-        onChangeText={setNewpassword}
-        secureTextEntry={'true'}
+        placeholder={'Enter confirmation code'}
+        onChangeText={setCode}
       />
 
-      <Custom_TextInput
-        placeholder={'Confirm Password'}
-        onChangeText={setConfirmPassword}
-        secureTextEntry={'true'}
-      />
-
-      <Custom_Button text={'Save'} type="PRIMARY" onPress={onSaveButtonPressed} />
+      <Custom_Button text={'Confirm'} type="PRIMARY" onPress={onConfirmPressed}/>
+      <Custom_Button text={'Resend code'} type="SECONDARY" onPress={onResendCodePressed} />
       <Custom_Button text={'Back to Sign In'} type="TERTIARY" onPress={onBackToSignInPressed}
       />        
       </SafeAreaView>

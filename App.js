@@ -1,18 +1,20 @@
 import { StyleSheet, SafeAreaView, Platform, StatusBar} from 'react-native';
-import {
+import 'react-native-gesture-handler';
+import { 
   responsiveHeight,
   responsiveWidth,
 } from "react-native-responsive-dimensions";
 
-import SignInScreen from './Screens/SignInScreen';
-import SignUpScreen from './Screens/SignUpScreen';
-import ConfirmEmailScreen from './Screens/ConfirmEmailScreen';
-import ResetPasswordScreen from './Screens/ResetPasswordScreen';
-import NewPasswordScreen from './Screens/NewPasswordScreen';
-import HomeScreen from './Screens/HomeScreen';
+import SignInScreen from './Screens/Authentication_Screens/SignInScreen';
+import SignUpScreen from './Screens/Authentication_Screens/SignUpScreen';
+import ConfirmEmailScreen from './Screens/Authentication_Screens/ConfirmEmailScreen';
+import ResetPasswordScreen from './Screens/Authentication_Screens/ResetPasswordScreen';
+import NewPasswordScreen from './Screens/Authentication_Screens/NewPasswordScreen';
+import HomeScreen from './Screens/OnBoardingScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import OnBoardingScreen from './Screens/OnBoardingScreen';
 
 
 
@@ -24,7 +26,7 @@ export default function App() {
     
     <NavigationContainer styles={styles.root}>
       <Stack.Navigator initialRouteName="HomeScreen" screenOptions={{headerShown: false}}>
-        <Stack.Screen name='HomeScreen' component={HomeScreen}/>
+        <Stack.Screen name='Onboarding' component={OnBoardingScreen}/>
         <Stack.Screen name="SignIn" component={SignInScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} /> 
         <Stack.Screen name="ConfirmMail" component={ConfirmEmailScreen}  /> 
