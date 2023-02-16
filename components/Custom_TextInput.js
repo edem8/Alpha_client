@@ -5,10 +5,11 @@ export default function Custom_TextInput({placeholder, onChangeText, secureTextE
   return (
 
     <View style={styles.input_label_text_container}>
-    <Text style={styles.input_label}>{placeholder}</Text>
+    {/*Text style={styles.input_label}>{placeholder}</Text>*/}
     <View style={styles.input_text_container}>
         <TextInput
         placeholder= {placeholder}
+        placeholderTextColor={"grey"}
         onChangeText={onChangeText}
         secureTextEntry = {secureTextEntry? true : false}
         style={styles.input_text}/>
@@ -36,7 +37,8 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: 10,
     paddingHorizontal: 10,
-    paddingVertical: 11
+    paddingVertical: 11,
+    borderColor: "white"
   },
 
 });

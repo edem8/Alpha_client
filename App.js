@@ -1,5 +1,5 @@
-import { StyleSheet, SafeAreaView, Platform, StatusBar} from 'react-native';
 import 'react-native-gesture-handler';
+import { StyleSheet, SafeAreaView, Platform, StatusBar} from 'react-native';
 import { 
   responsiveHeight,
   responsiveWidth,
@@ -10,11 +10,10 @@ import SignUpScreen from './Screens/Authentication_Screens/SignUpScreen';
 import ConfirmEmailScreen from './Screens/Authentication_Screens/ConfirmEmailScreen';
 import ResetPasswordScreen from './Screens/Authentication_Screens/ResetPasswordScreen';
 import NewPasswordScreen from './Screens/Authentication_Screens/NewPasswordScreen';
-import HomeScreen from './Screens/OnBoardingScreen';
+import OnBoardingScreen from './Screens/OnBoardingScreen';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import OnBoardingScreen from './Screens/OnBoardingScreen';
 
 
 
@@ -25,7 +24,7 @@ export default function App() {
   return (
     
     <NavigationContainer styles={styles.root}>
-      <Stack.Navigator initialRouteName="HomeScreen" screenOptions={{headerShown: false}}>
+      <Stack.Navigator initialRouteName="Onboarding" screenOptions={{headerShown: false}}>
         <Stack.Screen name='Onboarding' component={OnBoardingScreen}/>
         <Stack.Screen name="SignIn" component={SignInScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} /> 
@@ -34,6 +33,7 @@ export default function App() {
         <Stack.Screen name="NewPassword" component={NewPasswordScreen} /> 
         
       </Stack.Navigator>
+
     </NavigationContainer>
   
 

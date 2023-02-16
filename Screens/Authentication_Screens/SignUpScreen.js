@@ -5,7 +5,7 @@ import {
   responsiveWidth,
 } from "react-native-responsive-dimensions";
 import { useState } from 'react'
-import believe_in_yourself from '../assets/images/believe_in_yourself.jpg'
+import believe_in_yourself from '../../assets/images/believe_in_yourself.jpg'
 import Custom_Cover_image from '../../components/Custom_Cover_image'
 import Custom_TextInput from '../../components/Custom_TextInput'
 import Custom_Checkbox from '../../components/Custom_Checkbox'
@@ -63,10 +63,10 @@ export default function SignUpScreen({navigation}) {
 
       <View style={{flexDirection: 'row', alignItems: 'center', width: responsiveWidth(90), justifyContent: 'space-between'}}>
       <View style={[styles.input_label_text_container, {width: '25%'}]}>
-      <Text style={styles.input_label}>Postcode</Text>
       <View style={styles.input_text_container}>
         <TextInput
         placeholder= 'Postcode'
+        placeholderTextColor={"grey"}
         onChangeText= {setPostcode}
         style={styles.input_text}/>
     
@@ -75,10 +75,11 @@ export default function SignUpScreen({navigation}) {
 
 
       <View style={[styles.input_label_text_container, {width: '50%'}]}>
-      <Text style={styles.input_label}>Phone Number</Text>
+    
       <View style={styles.input_text_container}>
         <TextInput
         placeholder= 'Phone Number'
+        placeholderTextColor={"grey"}
         onChangeText= {setPhone}
         style={styles.input_text}/>
     
@@ -181,6 +182,7 @@ const styles = StyleSheet.create({
       backgroundColor: 'white',
       borderWidth: 1,
       borderRadius: 10,
+      borderColor: "white",
       paddingHorizontal: 0,
       paddingVertical: 7
     },

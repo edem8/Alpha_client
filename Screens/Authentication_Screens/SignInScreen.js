@@ -3,10 +3,10 @@ import { useState } from 'react';
 import {responsiveHeight, responsiveWidth,} from "react-native-responsive-dimensions";
 import { StyleSheet, Image, View, Text, ScrollView, TouchableOpacity} from 'react-native';
 
-import believe_in_yourself from '../assets/images/believe_in_yourself.jpg';
-import google from '../assets/images/google.png'
-import facebook from '../assets/images/facebook.png'
-import linkedin from '../assets/images/linkedin.png'
+import believe_in_yourself from '../../assets/images/believe_in_yourself.jpg';
+import google from '../../assets/images/google.png'
+import facebook from '../../assets/images/facebook.png'
+import linkedin from '../../assets/images/linkedin.png'
 
 import Custom_Checkbox from '../../components/Custom_Checkbox';
 import Custom_TextInput from '../../components/Custom_TextInput';

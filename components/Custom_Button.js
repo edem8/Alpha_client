@@ -38,16 +38,13 @@ const styles = StyleSheet.create({
     borderRadius: 9,
     alignItems: 'center',
     width: '90%',
-    marginVertical: 10,
+  
   },
   
   submit_button_container_PRIMARY: {
     backgroundColor: "#55AAFF",
   },
   submit_button_container_SECONDARY:{
-    borderColor: '#3B71F3',
-    borderWidth: 2,
-    
 },
 
   
