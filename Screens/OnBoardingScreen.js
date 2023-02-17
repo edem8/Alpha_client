@@ -14,8 +14,8 @@ import HomeBackground from '../assets/images/HomeBackground.jpg'
 
 
 export default function OnBoardingScreen({navigation}) {
-  const onLoginPressed = () => {navigation.navigate('SignIn')}
-  const onRegisterPressed = () => {navigation.navigate('SignUp')}
+  const onLoginPressed = () => {navigation.navigate('Authentication', {screen: 'SignIn'})}
+  const onRegisterPressed = () => {navigation.navigate('Authentication', {screen: 'SignUp'})}
   let [fontsLoaded] = useFonts({
     OpenSans_400Regular,
     OpenSans_600SemiBold, 

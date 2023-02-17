@@ -13,7 +13,6 @@ export default function Custom_Buttons({text, type, onPress}) {
 }
 
 const styles = StyleSheet.create({
-    
   submit_button_text: {
     color: "#fff",
     fontSize: 12,
@@ -29,23 +28,21 @@ const styles = StyleSheet.create({
 
   submit_button_text_TERTIARY: {
     color: 'black',
-
   },
 
   submit_button_container: {
-   
     padding: 15,
     borderRadius: 9,
     alignItems: 'center',
     width: '90%',
-  
   },
   
   submit_button_container_PRIMARY: {
     backgroundColor: "#55AAFF",
   },
+
   submit_button_container_SECONDARY:{
-},
+  },
 
   
 });

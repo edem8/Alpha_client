@@ -141,7 +141,7 @@ const styles = StyleSheet.create({
 
   remember_me_text: {
     paddingHorizontal: 10,
-    paddingVertical: 5,
+    paddingVertical: 10,
   },
 
   reset_password_conatiner: {

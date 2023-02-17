@@ -11,6 +11,7 @@ import AuthenticationStacks from './NavigationStacks/AuthenticationStacks';
 
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import ClientStacks from './NavigationStacks/ClientStacks';
 
 
 
@@ -22,8 +23,9 @@ export default function App() {
     
     <NavigationContainer styles={styles.root}>
       <Stack.Navigator initialRouteName="Onboard" screenOptions={{headerShown: false}}>
-        <Stack.Screen name='onboard' component={OnboardingStacks}/>
+        <Stack.Screen name='Onboard' component={OnboardingStacks}/>
         <Stack.Screen name="Authentication" component={AuthenticationStacks} />
+        <Stack.Screen name="Drawer" component={ClientStacks} />
       </Stack.Navigator>
 
     </NavigationContainer>
